@@ -1,0 +1,85 @@
+<!--Comenzamos el 11vo Practico Javascript: objetos.html
+
+Veremos como crear objetos con distitntos atributos: nombre/edad/estado civid y como llamamos a cada valor asignado segun el tipo de dato que aloja.
+
+Vemos que podemos crear un objeto y cargarle propiedades separadas por coma y entre corchetes (Formato casi JSON) o crear un objeto y añadirle las propiedades que queramos de forma individual. Decimos "casi" porque EL CORRECTO formato JSON es como esta definido en persona_dinamica, osea entra la pagina de JSON (jsonlint.com) para que le corrija/adapte el codigo de persona_1 y al cambiarlo le muestra las correcciones que hay que hacer. 
+
+Ademas mostramos como NO se muestrean las propiedades que contienen cada una de los dos objetos que creamos (persona_1,persona2).
+
+IMPORTANTE: El Array es distinto a lo que hicimos en persona_1 de asignarle propiedades separadas por comas, es parecido nomas. Ya que lo que hicimos aqui es crear un objeto con propiedades separadas por comas y encerrado entre {} y no entre []. Ademas un Array SI muestra todo su contenido mediante la consola definiendo ej:console.log('Numeros: '+numeros); del ejemplo anterior y mostrante todas las frutas, pero un objeto no, y se muestra incorrectamente asi [object Object] si lo definimos igual.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Objetos</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+				</div>
+			</div>	
+		</div>	
+
+		<script>
+
+			//Se pueden crear objetos a la variable asi mediante corchetes asi como en persona_1 - CASI Formato JSON (Jeison), como explicamos arriba.
+
+			var persona_1 = 
+
+			{ 
+				nombre:'Pedro',
+				apellido:'Picapiedra',
+				edad: 48,
+				casado: true
+			};
+
+			//Formato JSON CORRECTO = Como vemos es del tipo String o texto, que debemos pasar al tipo de que es cada parametro:String/numerico y logico a continuacion.
+
+			var persona_dinamica = JSON.parse('{"nombre": "Pedro","apellido": "Picapiedra","edad": 20,"casado": false}');
+
+			console.log(persona_dinamica);
+
+			var SEPARADOR = '------------------------------';
+		
+
+			//O bien se puede crear un objeto asi y añadirle propiedades también.
+			var persona_2=new Object();
+			
+			persona_2.nombre = 'Pablo';
+			persona_2.apellido = 'Mármol';
+			persona_2.edad = 48;
+			persona_2.casado = true;
+
+			//console.log('Persona 1: '+persona_1); Si concatenamos asi, la consola muestra [object Object], es decir no nos muestra el contenido del objeto. Por ello es que para mostrarlo completo y correcto hay que poner solo el nombre del objeto entre (); osea como esta debajo.
+
+			console.log(persona_1);
+			console.log(persona_2);
+			console.log(SEPARADOR);
+
+			console.log('Nombre Persona 1: '+persona_1.nombre);
+			console.log('Edad Persona 2: '+persona_2.edad);
+			console.log(SEPARADOR);
+
+			//Añadir propiedades o modificarlas
+
+			persona_1.profesion = 'Fontanero';
+			persona_2.edad = 45;
+			console.log(persona_1);
+			console.log(persona_2);
+			console.log(SEPARADOR);
+
+
+
+		</script>
+</body>
+</html>

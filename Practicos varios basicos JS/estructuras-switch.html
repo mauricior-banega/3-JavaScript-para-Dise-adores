@@ -1,0 +1,140 @@
+<!--Comenzamos el 16vo Practico Javascript: estructuras-while.html
+
+-Conoceremos la ESTRUCTURA DE CONTROL CONDICIONAL: WHILE y para que sirve.
+
+-Es una estructura que permite recorrer todo un elemento pero de forma mas limpia y fluida, ya que muchos navegadores no procesan bien estructuras if-else/else-if complejos.
+
+-Entonces switch es una alternativa efectiva y que se usa practicamente a la hora de crear paginas web funcionales.
+
+-Pero no SIEMPRE es la mejor alternativa ya que ejecuta una sola variable o cadena, a diferencia de IF ELSE/ ELSE IF que puede ejecutar varias condiciones/variables al mismo tiempo.
+
+(1*) - list-inline - Metodo de clase que quita el orden de las <ul> <li>.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Estructuras de control: switch</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	
+	<style type="text/css" media="screen">
+
+		
+		.seleccionado
+		{
+			background-color: #fc0;
+		}
+
+	</style>
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Estructura condicional: switch</h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-12">
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat".</p>
+
+				<!-- Lo llamamos Array ya que basicamente <ul> tiene <li> donde cada uno aloja un valor, y que despues sera alojado en la variable. Y esto, es un array. -->
+
+				<ul id="menu"class="list-inline"> <!-- (1*) -->
+					<li>Primero</li>
+					<li>Segundo</li>
+					<li>Tercero</li>
+					<li class="seleccionado">Cuarto</li> <!-- Pinta de amarillo el 4to elemento li-->
+					<li>Quinto</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+
+			
+			var i;
+			var longitud;
+			var colores = ['#ffcc00', '#cc00ff', '#00ffcc', '#ff00cc', '#ccff00', '#00ccff'];
+			var elementos = document.querySelectorAll('#menu>li');
+
+			elementos= document.querySelectorAll('#menu>li');
+
+			
+			longitud = elementos.length;
+			
+
+			for (i=0; i<longitud; i++) // FOR
+			{
+				elementos[i].style.color = colores[i];
+
+
+				switch (i) //SWITCH: Elije en valor de [i] cuando es 0 hasta la cantidad de elementos de longitud y en cada uno aplicar la condicion de aumentar px, cuando [i] supere los 4 casos aplicara 22px a todos los demas elementos. Si queremos meter una condicion para 2 casos, metemos el case 1 debajo del otro:
+				{
+					case 0: 
+					case 1:
+							elementos[i].style.fontSize ='12px';
+					break; //finalizacion de un caso
+
+					case 2: elementos[i].style.fontSize ='16px';
+					break;
+
+					case 3: elementos[i].style.fontSize ='18px';
+					break;
+
+					case 4: elementos[i].style.fontSize ='20px';
+					break;
+
+					default: elementos[i].style.fontSize ='22px';
+					break;
+
+				}
+
+				 /*Nombre: IF-ELSE IF ANIDADO - Funciona, pero no es facil de digerir y mas practico hacer un "switch" ahora crearemos el metodo equivalente, que hara exactamente lo mismo pero mas claro y fluira mejor con navegadores por ello, comentamos todo el if-else if.
+
+				if(i==0)
+				{
+					elementos[i].style.fontSize ='12px';
+				}
+
+				   else if(i==1) 
+				  {
+					 elementos[i].style.fontSize ='14px';
+				  } 
+				  else if(i==2)
+				  {
+					 elementos[i].style.fontSize ='16px';
+				  } 
+				  else if(i==3)
+				  {
+					 elementos[i].style.fontSize ='18px';
+				  }
+				  else if(i==4)
+				  {
+					 elementos[i].style.fontSize ='20px';
+				  } 
+				  else
+				  {
+					 elementos[i].style.fontSize ='22px';
+				  } 
+
+				  */
+				  
+			}
+	    </script>
+
+		
+</body>
+</html>

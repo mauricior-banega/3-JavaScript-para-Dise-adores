@@ -1,0 +1,113 @@
+<!--Comenzamos el 10mo Practico Javascript: arrays.html
+
+Los Arrays es una lista de contenedores (variables), asignado a un mismo nombre de variable. Este puede contener elementos del tipo numerico o string, etc. Se ponen entre corchetes y separados por comas.
+
+Ademas podemos tener cadenas de texto, del tipo logico, mezclado de cualquier tipo de variables e incluso otros arrays dentro de otro, a esto se los denomizan "matrices" o "arrays bidimencionales".
+
+//(*)IMPORTANTE: Corchetes se hacen CTL+ALT+(tecla a la derecha de P).
+
+(Aclaracion *1): Aclara algo importante, si ponemos dentro del () del Array UN solo valor numerico, decimos que el tenga 5 espacios disponibles para usar, ahora si ponemos mas de UNO y ponemos 2 o +, el sistema entiende que estas creando un Array con variables numericas dentro y no espacios! Sin importarle que tenga que hacerse con corchetes, interpreta en ese caso el [] igual que ().
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Arrays</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+				</div>
+			</div>	
+		</div>	
+
+		<script>
+
+
+			var numeros = [1 ,2 ,5 ,8 ,9 ,7 ];
+			var frutas = ['naranja', 'platano','pera','manzana'];
+			var listado = new Array(); //listado = []; (osea vacio) - (Aclaracion *1)
+			
+			var elemento;
+			var versionTexto;
+			var versionArray;
+			var SEPARADOR = '------------------------';
+
+			console.log('Numeros: '+numeros);
+			console.log('Frutas: '+frutas);
+			console.log(SEPARADOR);
+
+
+			console.log('Primer número: '+numeros[0]);
+			console.log('Tercera fruta: '+frutas[2]);
+			console.log('Cantidad de frutas: '+frutas.length);
+			console.log('Posición de la manzana: '+frutas.indexOf('manzana'));
+			console.log(SEPARADOR);
+
+
+
+			//Insertar elementos por el final
+			numeros.push(4); //El método unshift lo hace por el inicio.
+			console.log('Tras insertar: '+numeros);
+
+			elemento = 'granada';
+			frutas.push(elemento);
+			console.log('Tras insertar: '+frutas);
+
+
+
+			//Eliminar elementos por el final
+			elemento = numeros.pop(); //El método shift lo hace por el inicio.
+			console.log('Tras eliminar: '+numeros);
+			console.log('Número sacado: '+elemento);
+
+			elemento = frutas.pop(); 
+			console.log('Tras eliminar: '+frutas);
+			console.log('Número sacado: '+elemento);
+			console.log(SEPARADOR);
+
+
+
+			//Cambiar valor elementos
+			numeros[1] = 3;
+			console.log('Segundo número cambiado por el 3: '+numeros);
+			console.log(SEPARADOR);
+
+
+
+			//Ordenar
+			numeros.sort(); //Metodo de ordenamiento menor a mayor
+
+			frutas.sort(); //Metodo de ordenamiento menor a mayor segun nº de posicion de letra de palabra.
+
+			frutas.reverse(); //Metodo de ordenar a la inversa, exactamente (el 1ero pasa al ultimo etc).
+
+			console.log('Números ordenados: '+numeros);
+			console.log('Frutas ordenado inverso: '+frutas);
+			console.log(SEPARADOR);
+
+
+			//Otros metodos
+			listado = frutas.slice(0,2); //Alternativa para añadir y eliminar:splice
+			console.log('Corte de frutas: '+listado);
+			listado = numeros.concat(frutas);
+			console.log('Concatenacion de numeros y frutas: '+listado);
+
+			versionTexto= listado.join('*');
+			console.log('Version en texto: '+versionTexto);
+			versionArray = versionTexto.split('*');
+			console.log('Version array: '+versionArray);
+
+			//Podemos buscar como crear Arrays desde la pagina w3schools.com en la parte de JS Arrays Methods.
+
+		</script>
+</body>
+</html>

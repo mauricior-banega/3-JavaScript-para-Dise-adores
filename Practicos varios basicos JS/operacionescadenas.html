@@ -1,0 +1,65 @@
+<!--Comenzamos el 7to Practico Javascript: operacionescadenas.html
+
+Creamos variables que alojaran texto y que haremos lo que se llama "concatenacion", de una sobre otra. Aplicando distintas tecnicas que se pueden aplicar a variables de tipo String (texto).
+
+Debajo explicamos como realizar operaciones con variables lógicas.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Operaciones con datos de texto, al comienzo y luego explicamos las lógicas</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+				</div>
+			</div>	
+		</div>	
+
+		<script>
+
+
+			var inicio = "En un lugar de La Mancha"; //Cadena de texto inicio.
+			var fin = "de cuyo nombre no quiero acordarme";//Cadena de texto fin.
+			var completa = inicio+''+fin; //Ej de "concatenacion".
+			var exponente = 3;
+
+			console.log('Principio original: '+inicio);
+			console.log('Mayúsculas: '+inicio.toUpperCase());
+			console.log('Minúsculas: '+inicio.toLowerCase());
+			console.log('Longitud de la variable llamada inicio: '+inicio.length);
+			console.log('Letra posicion 3: '+inicio.charAt(3));
+			console.log('Posición palabra "lugar": '+inicio.indexOf('lugar'));
+			console.log('Extracción "En": '+inicio.substring(0,2));
+			console.log('Completa: '+completa);
+
+			//Nos explica que podemos sacar todas estas referencias de JavaScript sobre la codificacion de variables String/Numericas/Operadores/Metodos (que son los que llaman con paréntesis) tambien y demas; desde la pagina (www.w3schools.com/jsref/jsref_obj_string.asp). De aca podemos sacarlo para usarlos o bien crearlos nosotros desde 0, por ej de operaciones complejas que queramos realizar.
+
+			//----------------------Variables lógicas----------------------------
+
+
+			var verdadero = true; 
+			var falso = false;
+			var tercero = true; 
+
+			var resultadoAND = verdadero && falso;
+			var resultadoOR = verdadero || falso;
+			var resultadoNOT = !verdadero; 
+
+			console.log('Operador AND: '+resultadoAND); //AND
+			console.log('Operador OR: '+resultadoOR); //OR
+			console.log('Operador NOT: '+resultadoNOT); //NOT
+
+		</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+<!--Comenzamos el 6to Practico Javascript: operacionesnuméricas.html
+
+Creamos variables numericas, de los cuales realizaremos operaciones matematicas que mostraremos en consola.
+
+Conocemos la pagina de Mozilla Developer para ver todos los metodos y funciones Matematicas entre otras.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Operaciones con datos numéricos</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+				</div>
+			</div>	
+		</div>	
+
+		<script>
+
+
+			var a = 4.6;
+			var b = 2;
+			var base = 2;
+			var exponente = 3;
+
+			console.log('a');
+			console.log(a);
+			console.log('b');
+			console.log(b);
+
+			console.log('a+b');
+			console.log(a+b);
+			console.log('a-b');
+			console.log(a-b);
+			console.log('a*b');
+			console.log(a*b);
+			console.log('a/b');
+			console.log(a/b);
+			console.log('a%b');
+			console.log(a%b);
+
+			a++; // a = a+1; Variable contador de incremento (suma en 1 cantidad de veces)
+			console.log('a');
+			console.log(a);
+
+			a++; //a = a-1; Variable contador de decremento (resta en 1 cantidad de veces)
+			console.log('a');
+			console.log(a);
+
+			console.log('floor'); 
+			console.log(Math.floor(a)); //Método de rendondeo que fuerza el redondeo del resultado por debajo. Si es 4.7 sera 4 el resultado.
+
+			console.log('round') 
+			console.log(Math.round(a)); //Método de rendondeo que lo hace por arriba y por abajo como lo es normalmente.
+
+			console.log('pow') 
+			console.log(Math.pow(base, exponente));  //Método matematico que hace potencia, de la variable base al exponente.
+
+			console.log('pow');
+			console.log(resultado);
+
+
+			//A todos estos metodos matematicos y otros, los podemos ver por ej desde la pagina de Mozilla (developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math). Pudiendo ver por ej PI, funciones trigonometricas, random, logaritmo etc.
+			
+
+		</script>
+</body>
+</html>

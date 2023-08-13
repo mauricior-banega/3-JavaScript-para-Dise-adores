@@ -1,0 +1,78 @@
+<!--Comenzamos el 21vo Practico Javascript: eventos.html
+
+-Creamos este HTML donde crearemos una pagina que tomara dos valores ingresados y haremos su base*altura, todo esto captado mediante eventos/avisos que un usuario realiza mediante una pagina web y que operaremos en base a ellos. Mostraremos el resultado en un <pre>.
+
+-Ademas, crearemos tambien un archivo eventos.css para darle un estilo personalizado pero mas puntualmente nos centraremos en el archivo eventos.js que es donde realizaremos todo el trabajo funcional, y llamaremos a las funciones para que podamos mostrar cada resultado obtenido/ingresado.
+
+(1*)-Tiene la estructura de un formulario, pero no lo llamamos como <form> ya que no lo crearemos para enviar datos a algun lado, sino que esta pensado para captar el dato para hacer operaciones con ese dato. Datos de base y altura en este caso.
+
+(2*)-Explicamos sobre el tipo de variable 
+
+'click':Esta froma parte de una cantidad de variables que JS tiene disponibles para usar en cuanto a funcionalidades que JS puede tener, tipo lista de cosas que se pueden hacer.
+function(event): Esto nos permite crear una funcion evento, de la que decimos "anonima" pero que puede ser usada medainte event.target para ACCEDER al EVENTO
+ mediante esa instruccion.
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Eventos</title>
+
+	<!--BootStrap 3-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/eventos.css">
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Eventos: interactuando con HTML</h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-4">
+				<h2>Área de un rectangulo</h2>
+
+				<div class="form-group"> <!-- (1*) -->
+
+					<label for="base">Base</label>
+					<input type="text" class="from-control" id="base" placeholder="Introduce la base">
+
+				</div>	
+
+				<div class="form-group">
+
+					<label for="altura">Altura</label>
+					<input type="text" class="from-control" id="altura" placeholder="Introduce la altura">
+					
+				</div>
+
+
+				<div id="resultado">
+
+					<pre>- - - Zona de resultado - - -</pre>
+					
+				</div>	
+
+				<button id="calcular" class="btn">Calcular</button>
+
+			</div>
+		</div>
+
+
+		<!-- Aqui llamamos a las operaciones que realizamos en js -->
+		<script src="js/eventos.js" type="text/javascript" charset="utf-8"></script>
+
+		
+</body>
+</html>

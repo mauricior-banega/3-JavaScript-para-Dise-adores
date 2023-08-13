@@ -1,0 +1,32 @@
+<!--Comenzamos el 4to Practico Javascript: holamundo.html
+
+Ahora hacemos el ejemplo de como mostrar por Consola mensajes, ya que es mas practico que mostrar una alerta de ventana emergente en el navegador. Tambien sirve para solventar algun tipo de error mas complicado y localizarlo. 
+
+Ademas veremos como buscar un elemento tipo ID (document.getElementById) y cambiarlo mediante el metodo INNER (.innerHTML=).
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Hola mundo</title>
+
+</head>
+<body>
+		<h1 id="mensaje">Hola.</h1>
+
+
+		<!--En vez de usar este mensaje; alert('Adios.'); para mostrar el mensaje usaremos este otro, que mostraremos por consola. -->
+
+		<script>
+			document.getElementById('mensaje').innerHTML='Adios.' 
+
+			//Asignamos un id a h1 "mensaje" y le decimos que, busque y extraiga del elemento tipo id=mensaje su valor y que cargue el valor html = 'Adios.' 
+
+			console.log('Adios');
+		</script>
+</body>
+</html>

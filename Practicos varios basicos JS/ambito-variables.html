@@ -1,0 +1,122 @@
+<!--Comenzamos el 20vo Practico Javascript: ambito-variables.html
+
+-Veremos el tipo de ambito global/local en el que pueden estar las variables y como afectan al funcionamiento. Conocerlas es fundamental para corregir errores o bien utilizarlas de forma eficiente en todo el archivo que realicemos.
+
+Para ello creamos variables llamadas global y local al cual mostraran un String (hola/adios) y que podremos ver en cada caso en donde funciona y donde no dentro de un script o funcion.
+
+Asi mismo veremos como una funsion podemos contenerlo dentro de una variable porque es en definitiva un tipo de objeto. Pero SIEMPRE debemos de hacer ese llamado al finalizar la funcion y no antes.
+
+A continuacion apliamos...
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Ámbito de las variables</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Ámbito de las variables</h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-12">
+				<script>
+					
+					console.log('--------------------------------');
+					console.log('Antes de definir global:');
+					console.log(global); //Veremos que queremos llamar a que muestre una variable (global) que aun no esta declarada.
+				</script>
+			</div>
+		</div>
+
+
+
+		<script>
+
+			var global ='hola'; //Recien aca se declara
+
+			console.log('--------------------------------');
+			console.log('Ambito general de la ventana (objetvo window):');
+			console.log('Valor global:'+window.global); //Podemos acceder porque esta definido de manera que le indicamos su ambito (window).Entonces sale fuera del script para buscarlo, lo encuentra y lo muestra.
+
+	//		console.log('Valor global:'+local); 
+
+
+			//Interara acceder a una variable definida dentro de una funcion, por lo tanto adelanto, no podra acceder por que todas las variables dentro de una funcion, son locales.
+
+
+
+			//ACLARACION: No importa si un error ocurre dentro de un script, el programa correra igual y si existieran otros scripts tambien se ejecutarian de forma secuencial. Es decir no se cortaria el programa, pero si la ejecucion del script en donde se encontrara.
+
+			//Pero pero pero, como debajo tenemos una funcion, esta no andara hasta que quitemos el error de esa variable local que no existe a modo de ejemplo, asique la comentaremos.
+
+
+
+			miFuncion(); 
+			//Porque funciona esta llamada de ejecucion de funcion cuando esta definida despues? -Porque estas funciones en JS siempre estan disponibles en CUALQUIER parte del codigo que las llame.
+
+			function miFuncion()
+			{
+				var local = 'adiós';
+				var global = 'otro';
+
+				console.log('--------------------------------');
+				console.log('Dentro de la miFuncion:');
+				console.log('Valor global:'+global);
+
+				//El sistema de ambitos de JS (dentro de una funcion) BUSCA si esa variable esta dentro del script, pero sino la encuentra, buscara un lvl superior, y al encontrarla hace uso de ella. Sin necesidad de especificar en que ambito esta para encontrarla (osea poner window.global). Incluso la encuentra si estuviera en otro script!
+
+				//Que sucede si pusieramos otra variable global, pero local (mismo nombre) pero con otro mensaje ('otro'). Mostrara pues, la primera variable que encuentre y no saldra a buscar otra, por ende mostrara solo la local.
+
+				//Ahora, como hacer para FORZAR a traer esa variable global tambien? Facil, llamando como vimos antes, especificando AHORA SI su ambito.
+
+				console.log('Valor global de windows:'+window.global);
+
+				console.log('Valor local:'+local);
+
+			}
+
+
+
+
+
+	//		miFuncionLiteral();
+
+			//Llamada a la funcion apartir de la variable definida.
+
+
+			//La variable "miFuncionLiteral" guarda dentro una funcion. Pero aplica el caso anterior, si llamamos a la funcion antes de definida la variable de la funcion esta dara error ya que esa variable no existe. Por ello si la ponemos despues si, entonces comento y pongo abajo el llamado.
+
+			var miFuncionLiteral = function() 
+			{
+				console.log('--------------------------------');
+				console.log('Esto es una funcion literal.');
+				console.log('Valor global:'+global);
+			}
+
+			//ACLARACION: Una funcion en JS no deja de ser un tipo de objeto tambien, al igual que cadenas de texto, booleanos, valores logicos, arrays, etc. Por ello es que a una funcion podemos asignaselo a una variable, ya que es un tipo de objeto.
+
+			miFuncionLiteral(); //Aca si andará
+
+	    </script>
+
+		
+</body>
+</html>

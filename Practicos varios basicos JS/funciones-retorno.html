@@ -1,0 +1,159 @@
+<!--Comenzamos el 19vo Practico Javascript: funciones-retorno.html
+
+-Aplicaremos otro ejemplo de aplicacion de funciones basico practico.
+
+-Descripcion: Podemos aplicar una funcion para simplificar estructuras repetitivas, pudiendo tambien aplicar las funciones las veces que queramos llamandola cada vez que precisemos que realizen determinada operacion.
+
+
+
+Explicacion sobre funciones.retorno:
+-Creamos un div de id="resultado" (espacio en el HTML vacio, por ahora)
+-Creamos una variable capaResultado que sera usado posteriormente para alojar "algo" en la ubicacion del div id "resultado".
+-Creamos la funcion aRGB que realiza la conversion de un hexadecimal #FFCC00, que es ejecutada mediante el nombre "hexadecimal". Esta funcion muestra por consola cada valor en R/G/B, pero ademas queremos que retorne un mensaje con los valores obtenidos en RGB y del hexadecimal #FFCC00, de esta manera:
+
+return 'El codigo hexadecimal <span style="background-color:'+hexadecimal+'">'+hexadecimal+'</span> en RGB es ('+R+', '+G+','+B+');
+
+-Aca es el momento en donde en el div de id=resultado alojaremos este valor de retorno, guardando ese algo dentro de capaResultado mediante innerHTML. Capta ese retorno dandole referencia mediante = aRGB (funcion) y el caso donde se aplica esa funcion que es para el hexa ('#FFCC00'). Quedando
+
+capaResultado.innerHTML = aRGB('#FFCC00');
+
+-Despues a este ejemplo de retorno mediante el mensaje explicado arriba, aplica otra clase de retorno. Como lo muestra en el codigo final mostrado.
+
+ACLARACION: Un retorno puede devolver una cadena de texto con los valores obtenidos en este caso R/G/B como esta en el primer ej, o mediante un array que en cada pocision tenga el valor del hexadecimal, el 1ero para R, el 2do para G y el 3ro para B (como tambien lo ejemplifica) o un objeto que tuviera en la primera posicion para el 1ero para R, el 2do para G y el 3ro para B tambien.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Funciones con Retorno</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	
+	<style type="text/css" media="screen">
+
+		
+		.seleccionado
+		{
+			background-color: #fc0;
+		}
+
+	</style>
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Valores devueltos por una función</h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-12">
+			
+				<div id="resultado"></div> <!-- Nodo HTML que mas adelante capaResultado nos devolvera la posicion para trabajar con el luego (contendra el valor de retorno de la funcion).-->
+			
+			</div>
+		</div>
+
+		<script>
+
+		var capaResultado = document.getElementById('resultado');
+		// Variable que alojara un valor html si lo encuentra (sera el valor del retorno)
+
+		function aRGB(hexadecimal) //Funcion que convierte un hexadecimal (#FFCC00) a RGB EJ:(R(Red):267,G(Green):123,B(Blue):123). No es preciso saberlo, pero si a lo que se obtiene y como aplicar eso como retorno.
+		{
+			var valorHex; 
+			//Aclaro: Todas las variables dentro de una funcion existen solo dentro de esta y no fuera.
+
+			if(hexadecimal.charAt(0)==="#") //Si tiene #
+			{
+				valorHex = hexadecimal.substring(1,7); //Guarda valor desde posicion 1(F) al 7(0, un nº mas que el 6to para no perder valores por defecto).
+
+			} else 
+				{
+					valorHex = hexadecimal;
+					hexadecimal = '#'+hexadecimal;
+				}
+
+				//parseInt funcion que recibe dos paramentros, uno recibe el valor a covertir a entero y la base ej:16, en la que lo convierte y devuelve ese calculo.
+				//substring funcion que corta en intervalos de posicion los str.
+
+				R = parseInt (valorHex.substring(0,2), 16); //R es = al valor hexadecimal, "cortado" desde posicion (0 a 2) FF
+				G = parseInt (valorHex.substring(2,4), 16); //G es = al valor hexadecimal, "cortado" desde posicion (2 a 4) CC
+				B = parseInt (valorHex.substring(4,6), 16); //B es = al valor hexadecimal, "cortado" desde posicion (4 a 6) 00
+
+				//Mostrara además de hacer/mostrar retorno luego, estos mjes por consola.
+				
+				/* Comento esto tambien porque ahora mostrara lo del array 2do ej
+
+				console.log('Rojo'+R); 
+				console.log('Verde'+G);
+				console.log('Azul'+B);
+				*/
+
+
+	   //1er ej del return, devolver un "String"
+
+	   //			return 'El codigo hexadecimal <span style="background-color: '+hexadecimal+'">'+hexadecimal+'</span> en RGB es ('+R+','+G+','+B+')';
+
+
+	   /*2do ej del return, devolver un "Array". Que tambien comentamos para dar lujar al ej: 3
+
+	   				return [R, G, B]; */
+
+	   				return {rojo: R, verde: G, azul:B}; //3er ejemplo: Devolver un "Objeto"
+		}
+
+		//Variable codigosColorRGB perteneciente a 2do ej 
+
+		
+		/* Comentamos tambien el 2do ej, para dar lugar al 3er ej.
+
+			var codigosColorRGB = aRGB('#FFCC00');
+
+			console.log('Rojo: '+codigosColorRGB[0]);
+			console.log('Verde: '+codigosColorRGB[1]);
+			console.log('Azul: '+codigosColorRGB[2]);
+
+		*/
+
+		var codigosColorRGB = aRGB('#FFCC00'); 
+
+			console.log('Rojo: '+codigosColorRGB.rojo);
+			console.log('Verde: '+codigosColorRGB.verde);
+			console.log('Azul: '+codigosColorRGB.azul);
+
+		//    aRGB('#FFCC00'); 
+
+
+		//Llamado de ejecusion de la funcion para que realize con ese valor hexagesimal propuesto. Pero luego agrega esta otra declaracion que ademas de hacer el llamado de ejecucion de la funcion lo iguala o pone que es igual a aRGB('#FFCC00');  al mismo tiempo. De esa manera logicamente intuyo que sirve para extraer el valor html del retorno y alojarlo en capaResultado.innerHTML, ademas de declarar tambien la funcion.Es decir hace esto:
+
+
+
+		//    capaResultado.innerHTML = aRGB('#FFCC00'); //Capta el valor retornado de la funcion y a la vez se define la fucion a ejecutar.
+
+
+		//A continuacion mostraremos como pondremos disponibles los valores de RGB para ser usados posteriormente en el programa, deberiamos cambiar el contenido de return (comentamos anterior) y los metodos anteriores.
+
+
+
+
+
+
+
+	    </script>
+
+		
+</body>
+</html>

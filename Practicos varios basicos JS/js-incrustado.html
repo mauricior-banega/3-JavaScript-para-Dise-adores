@@ -1,0 +1,47 @@
+<!--Comenzamos el 2er Practico Javascript: js-incrustado.html
+
+-Lo que haremos sera incrustar una hija de estilos javascript bootstrap. Y veremos distinto al Hola mundo. del primer proyecto.
+
+-Despues veremos como incrustaremos un script.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores- Uso basico de JavaScript</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!--Asi se incrusta Javascript en HTML
+
+	<script>
+		
+		alert('Hola mundo.'); //Abre una alerta en pantalla. Como las ejecuciones se aplican en "casacada" es que siempre los script van al ultimo, antes de </body>.
+ 
+	</script>
+
+    -->
+</head>
+<body>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>Hola mundo.</h1>
+					<p>Esto es un fichero basico en HTML5, que hace uso de JavaScript en el propio documento.</p>
+				</div>
+			</div>
+		</div>	
+
+
+		<script>
+		
+		alert('Hola mundo.'); //Ahora si, de esta manera mostrara Hola mundo primero pero la alerta aparecera despues y no antes de mostrar el mensaje.
+ 
+	</script>
+</body>
+</html>

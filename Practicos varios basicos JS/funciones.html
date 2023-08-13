@@ -1,0 +1,70 @@
+<!--Comenzamos el 17vo Practico Javascript: funciones.html
+
+-Explicacion sobre ejemplo de funciones que se utlizan para generar algo que se quiere hacer varias veces pero de forma simplificada. Todo lo que esta repetido va dentro de la funcion (incluso las variables locales de la funcion que debn ser declaradas dentro), dentro del parentesis la variable que contendra valores de las priopiedades distintas que queramos aplicar ej:nombre que luego se concatenara para ser mostrada o retornada.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Funciones</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	
+	<style type="text/css" media="screen">
+
+		
+		.seleccionado
+		{
+			background-color: #fc0;
+		}
+
+	</style>
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Funciones. Que son y para que se usan</h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-12">
+				<p>"Las funciones se emplean para reutilizar fragmentos de codigo que son aplicables a diferentes partes del programa, aunque con diferentes valores, exponen la misma funcionalidad.</p>
+			</div>
+		</div>
+
+		<script>
+
+				function saludar (nombre)
+				{
+					console.log('Hola '+nombre+'.');
+				}
+
+				function calcularAreaRectangulo(base, altura)
+				{
+					console.log('El area es: '+(base*altura));
+				}
+				
+				saludar('Marcos');
+				saludar('Pepe');
+				calcularAreaRectangulo(2,4);
+				calcularAreaRectangulo(10,20);
+
+				//Descripcion explicada de una funcion: Palabra function, nombre de la funcion que cumpla todas las propiedades de variable (sin acentos, sin numeros, caracteres especiales), entre parentesis los paramentros que recibe que pueden ser 2 o + separados por comas, o ninguno. Entre llaves todas las instrucciones que ejecutan las funciones que tendrian todas. Luego para llamar a la funcion es, nombre definido de la funcion creada y entre parentesis los paramentros que me pida, si es cadena de caracteres "una palabra en este caso nombre ej: "Marcos" o numeros separados por coma y todo encerrado entre parentesis finalizando con ;.
+
+	    </script>
+
+		
+</body>
+</html>

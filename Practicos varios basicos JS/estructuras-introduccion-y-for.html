@@ -1,0 +1,81 @@
+<!--Comenzamos el 13vo Practico Javascript: estructuras.introduccion-y-for.html
+
+Veremos como se recorre cada uno de los elementos de ul (cada li) mediante un for. Donde en este ejemplo veremos como mediante el codigo:
+
+elementos[i].style.fontSize = '20px';
+
+Hacemos que cambie de tamaño cada uno de los elementos de la lista por accion del "for".
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Estructuras de control (breve introduccion): y el For</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	
+	<style type="text/css" media="screen">
+
+		
+		.seleccionado
+		{
+			background-color: #fc0;
+		}
+
+	</style>
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Estructura iterativa: for</h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-12">
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat".</p>
+
+				<!-- Lo llamamos Array ya que basicamente <ul> tiene <li> donde cada uno aloja un valor, y que despues sera alojado en la variable. Y esto, es un array. -->
+
+				<ul id="menu"class="list-inline"> 
+					<li class="seleccionado">Primero</li>
+					<li>Segundo</li>
+					<li>Tercero</li>
+					<li>Cuarto</li>
+					<li>Quinto</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+
+			var elementos; //Que alojara los valores de cada array
+			var i; //Variable que usaremos en for para recorrer el array
+			var longitud;//Aloja la cantidad de elelemtos que contiene elementos.
+
+			elementos = document.querySelectorAll('#menu>li') //Selector estilo css, '#menu>li'. Decimos que todos los li de menu sean guardados en elementos.
+
+			i = 0;
+			longitud = elementos.length;  //No le damos un valor fijo, sino que decimos que tenga el tamaño de la cantidad de elementos que tenga la variable.
+
+			for (i=0; i<longitud; i++)
+			{
+				elementos[i].style.fontSize = '20px'; //Cambiamos el tamaño de cada elemento a medida que lo recorremos.
+			}; //El "for" puede terminar en ; o no segun el video.
+
+	    </script>
+
+		
+</body>
+</html>

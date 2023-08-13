@@ -1,0 +1,46 @@
+<!--Comenzamos el 9no Practico Javascript: propiedadoperadores.html
+
+Veremos como realizar correctamente las prioridades usando () para calculos sobre variables numericas y lógicas.
+
+Nos recomienda al ultimo la pagina de Mozilla donde podemos ver esto por niveles.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Precencia de operadores</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+				</div>
+			</div>	
+		</div>	
+
+		<script>
+
+
+			var a = 10;
+			var b = 2;
+			var c = 5;
+			
+			var verdadero = true;
+			var falso = false;
+
+			console.log('Cálculo: '+ ((a + b) * c)); // Sin () da mal: 1010
+			console.log('Valor: '+ (verdadero && falso)); // Sin () da mal:false
+			
+			//Si nos quedan dudas como ordenar con () en operadores entre variables nos indica que Googliemos: procedencia operadores javascript. Y seleccionamos la de Mozilla donde veremos las prioridades en niveles, vemos alli que la suma + esta un nivel 6 y multiplicacion un nivel 5.
+
+		</script>
+</body>
+</html>

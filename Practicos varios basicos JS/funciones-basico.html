@@ -1,0 +1,130 @@
+<!--Comenzamos el 18vo Practico Javascript: funciones-basico.html
+
+-Aplicaremos otro ejemplo de aplicacion de funciones basico practico.
+
+-Descripcion: Podemos aplicar una funcion para simplificar estructuras repetitivas, pudiendo tambien aplicar las funciones las veces que queramos llamandola cada vez que precisemos que realizen determinada operacion.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Funciones Basico</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	
+	<style type="text/css" media="screen">
+
+		
+		.seleccionado
+		{
+			background-color: #fc0;
+		}
+
+	</style>
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Funciones. Que son y para que se usan</h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-12">
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat".</p>
+
+				<!--Array 1 id:"menu-A" -->
+				<ul id="menu-A"class="list-inline">
+					<li>Primero</li>
+					<li class="seleccionado">Segundo</li>
+					<li>Tercero</li>
+					<li >Cuarto</li> 
+					<li>Quinto</li>
+				</ul>
+
+				<!--Array 2 id:"menu-B" -->
+				<ul id="menu-B"class="list-inline">
+					<li>Primero</li>
+					<li >Segundo</li>
+					<li>Tercero</li>
+					<li class="seleccionado">Cuarto</li> 
+
+				<!--Array 3 id:"menu-C" -->
+				<ul id="menu-C"class="list-inline">
+					<li>Primero</li>
+					<li >Segundo</li>
+					
+				</ul>
+			</div>
+		</div>
+
+		<script>
+
+				function estilizarMenu(menu)
+				{
+					var longitud;
+					var i;
+					var tamanioBase=12;
+					var colores = ['#ffcc00', '#cc00ff', '#00ffcc', '#ff00cc', '#ccff00', '#00ccff'];
+					var elementos = document.querySelectorAll(menu+'>li');//Ponemos (menu+'>li') ya que el li esta contenido > en menu y es un elemento de css y por eso va entre '', pero al tener que concatenarlo en un objeto creado llamado menu, este no es propiedad css y va menu+.
+
+					longitud = elementos.length;
+						
+						for (i=0; i<longitud; i++)
+					{
+						elementos[i].style.color = colores[i];
+						elementos[i].style.fontSize = tamanioBase + i*2 + 'px';
+					}
+
+				}
+
+				estilizarMenu('#menu-A');
+				estilizarMenu('#menu-B');
+				estilizarMenu('#menu-C');
+
+				/*
+
+				var longitud;
+				var i;
+				var tamanioBase=12;
+				var colores = ['#ffcc00', '#cc00ff', '#00ffcc', '#ff00cc', '#ccff00', '#00ccff'];
+				var elementos = document.querySelectorAll('#menu-A>li');
+
+				longitud = elementos.length;
+				for (i=0; i<longitud; i++)
+				{
+					elementos[i].style.color = colores[i];
+					elementos[i].style.fontSize = tamanioBase + i*2 + 'px';
+				} //Breve resumen: Muestra contenido de cada <li> cambiando el color y tamaño de fuente. Pero que pasa si queremos aplicar esto mismo para otro array similar?
+
+				elementos = document.querySelectorAll('#menu-B>li'); //No le ponemos var porque ya esta definido al comienzo el tipo de variable.
+
+				longitud = elementos.length;
+				for (i=0; i<longitud; i++)
+				{
+					elementos[i].style.color = colores[i];
+					elementos[i].style.fontSize = tamanioBase + i*2 + 'px';
+				} //Recorremos de nuevo elemento pero cambiamos el id que recorrera:'#menu-B>li'.
+
+				//Podemos observar que usamos 2 operaciones de control "for" iguales, cambiando solo el id en donde queremos aplicar las condiciones que estan dentro. Por ello es que para no duplicar operacion identicas podemos usar una "funcion" para evitar la suplicacion por cada vez que tengamos que aplicar esa propiedad, llamando a esa funcion las veces que la necesitemos.
+
+				*/
+
+
+	    </script>
+
+		
+</body>
+</html>

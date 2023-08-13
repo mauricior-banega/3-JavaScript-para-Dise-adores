@@ -1,0 +1,1 @@
+alert('Hola.mundo.'); //Vinculado 1º

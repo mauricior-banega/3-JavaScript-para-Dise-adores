@@ -1,0 +1,63 @@
+<!--Comenzamos el 3er Practico Javascript: js-vinculado.html
+
+Es una copia exacta de js-incrustado pero mostraremos como se vincula un script desde un archivo js (holamundo.js) desde la carpeta js que creamos para el ejemplo.-
+
+En el 2do video del Capitulo 2: Nos indica cuales son los programas utilizados para emular la pagina web mediante un hosting local.
+Para 
+MAC:MAMP
+Windows:WampServer
+Ambos:XAMMP
+
+En el 3er video del Capitulo 2: Nos explica que es el 
+
+DOM:(Document Object Model), es la estructura que se compone apartir de nuestro codigo HTML en el navegador, es el arbol jerarquico o nodo del que compone a otros elementos.
+
+En el 4to video del Capitulo 2: Nos explica que es el 
+
+BOM:(Browser Object Model), y es una parte complementaria del DOM, es el tipo de codigo o estructura del que podemos crear un archivo js que depende del fabricante que lo realizo. Y es importante conocer los tipos ya que puede presentar problemas de compatibilidad y funcionamiento del codigo. Por ej; del codigo visto alert('Holamundo.'); no se ve pero pertenece a Window, pudiendose codificar tambien window.alert('Holamundo.'); pero no lo hacemos ya que por convencion y acortamiento los programadores lo dejaron acortado.
+
+En el 5to video del Capitulo 2: Nos muestra como ver en el panel de Herramientas de desarrolador que al poner en vez de alert(); ponemos aler() mal escrito y podremos ver que nos indicara una cruz roja, donde al clickear nos muestra en "Console" la palabra que esta mal escrita, el archivo que es y el nº de la linea. Console aparece tambier al lado del engranaje con un simbolo de flecha mas tres lineas horizontales sino tambien extendiendo la linea de posocionamiento de la ventana.
+ Esto tambien nos sirve para ver el padding/margin etc que tiene lo que estamos creando asi como tambien editar el documento, cambiarle el color de fuente etc. Si se edita desde el navegador no afecta el documento original del editor o archivo.
+
+Luego esta el otro panel que es de red (Network), que nos indica como esta compuesto nuestro poryecto, que tipo de archivos y su peso y ejecucion pudiendo identificar problemas de lentitud o de acelerar u optimizar nuestra web, mediante el cambio de codigos mas agiles.
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores- Uso básico de JavaScript</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>Hola mundo.</h1>
+					<p>Esto es un fichero basico en HTML5, que hace uso de JavaScript vinculado.</p>
+				</div>
+			</div>
+		</div>	
+
+		<!-- Esto es lo mismo que poner: 
+		<script> alert('Hola mundo.'); </script>
+		pero de esta otra manera es mas organizada ya que evitamos llenar de metodos js el documento html, y como vemos llamamos el archivo holamundo.js desde la carpeta js.-->
+ 		
+		
+		<script src="js/holamundo.js"></script> <!--Vinculado 2º-->
+
+		<!--BootStrap 3, librerias JavaScript: Podemos vincular un archivo local js o vincular un fichero desde una pagina en internet, que es el framwork que estamos utilizando para visualizar los ejemplos.  -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
+		   
+		
+		</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!--Comenzamos el 15vo Practico Javascript: estructuras-while.html
+
+-Conoceremos la ESTRUCTURA ITERATIVA: WHILE y para que sirve.
+
+-Es una estructura que permite recorrer todo un elemento pero detenerse cuando encuentra una condicion definida en el while. Y aplicar mientras se cumple algo, que como en el ejemplo no solo hace algo sino que dice que haga eso segun un if/else dentro.
+
+-En definitiva while es una especie de for que recorre o funciona hasta llegar a una determinada condicion definida.
+
+(1*) - list-inline - Metodo de clase que quita el orden de las <ul> <li>.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Estructura iterativa: while</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	
+	<style type="text/css" media="screen">
+
+		
+		.seleccionado
+		{
+			background-color: #fc0;
+		}
+
+	</style>
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Estructura iterativa: while </h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-12">
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat".</p>
+
+				<!-- Lo llamamos Array ya que basicamente <ul> tiene <li> donde cada uno aloja un valor, y que despues sera alojado en la variable. Y esto, es un array. -->
+
+				<ul id="menu"class="list-inline"> <!-- (1*) -->
+					<li>Primero</li>
+					<li>Segundo</li>
+					<li>Tercero</li>
+					<li class="seleccionado">Cuarto</li> <!-- Pinta de amarillo el 4to elemento li-->
+					<li>Quinto</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+
+			var elementos;
+			var i;
+			var longitud;
+			var finalizar; //Variable que va a añadir la condicion de interrupir el ciclo del while, cuando se cumpla la condicion definida en el.
+
+
+			elementos= document.querySelectorAll('#menu>li');
+
+			i = 0;
+			longitud = elementos.length;
+			finalizar = false;
+
+			while (i<longitud && finalizar==false)
+			{
+				elementos[i].style.fontSize = '20px';
+
+				if(elementos[i].className.indexOf('seleccionado') >= 0)
+				{
+					finalizar = true;
+				}
+
+				else 
+				{
+					i++;
+				}
+
+			}
+
+
+	    </script>
+
+		
+</body>
+</html>

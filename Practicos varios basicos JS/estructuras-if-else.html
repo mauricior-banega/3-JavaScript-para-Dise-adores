@@ -1,0 +1,91 @@
+<!--Comenzamos el 14vo Practico Javascript: estructuras-if-else.html
+
+-Conoceremos la ESTRUCTURA CONDICIONAL: IF- ELSE y para que sirve.
+
+(1*) - list-inline - Metodo de clase que quita el orden de las <ul> <li>.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Estructura de control: if - else</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	
+	<style type="text/css" media="screen">
+
+		
+		.seleccionado
+		{
+			background-color: #fc0;
+		}
+
+	</style>
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1>Estructura condicional: if - else </h1>
+					
+				</div>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			<div class="col-xs-12">
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat".</p>
+
+				<!-- Lo llamamos Array ya que basicamente <ul> tiene <li> donde cada uno aloja un valor, y que despues sera alojado en la variable. Y esto, es un array. -->
+
+				<ul id="menu"class="list-inline prueba"> <!-- (1*) -->
+					<li class="seleccionado">Primero</li>
+					<li>Segundo</li>
+					<li>Tercero</li>
+					<li>Cuarto</li>
+					<li>Quinto</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+
+			var elemento = document.getElementById('menu').className; //Aclaracion del método: Guarda en elemento los elementos del id menu (contenido de todos los li) pero además teniendo en cuenta todas las clases (class="list-inline") que tiene asociadas, mediante la declaración,.className.
+
+			if(elemento.indexOf('prueba') >= 0 && (elemento.indexOf('list-inline') >= 0)) //Si encuentra la clase prueba Y list-inline' en elemento igual o mayor a 0, osea EXISTIERA, lo mostrara en consola.
+			{
+				//Instrucciones si se cumple condicion1
+				console.log('El menú tiene la clase prueba y list-inline');
+
+			} else if (elemento.indexOf('list-inline') >= 0)
+				{	
+					console.log('El menú tiene la clase list-inline');
+					//Instrucciones si se cumple condicion2
+
+				} 
+					else 
+					{	
+
+						console.log('El menú no tiene la clase prueba ni list-inline');
+						//Instrucciones si no se cumplen ninguna de las anteriores
+					}
+
+					/*ACLARACION: En el video quita prueba para que pase por el else if 2do y despues quita list-inline para que pase al ultimo else mostrando el mensaje por consola que no tiene ninguna de las clases. Pero dejaremos solo el ejemplo de que pasa por el primer if mostrando que tiene la clase prueba.
+
+					Luego antes de terminar ademas de que el primer if sea:
+					if(elemento.indexOf('prueba') >= 0), le añade una condicion mas para que se cumpla, y es que tenga la clase prueba "Y ADEMAS" la clase list-inline.
+
+					*/
+	    </script>
+
+		
+</body>
+</html>

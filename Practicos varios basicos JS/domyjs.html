@@ -1,0 +1,120 @@
+<!--Comenzamos el 12vo Practico Javascript: domyjs.html (DOM 
+Y JAVASCRIPT)
+
+(1*): Para INCLUIR informacion adicional en la pagina web, debemos de colocar el script en el lugar en donde queremos mostrar el dato, por ej la fecha.
+
+(2*): Para MODIFICAR la informacion existente podemos colocar el script justo antes de fonalizar el body como de costumbre.
+
+-En definitiva podemos decir que el elemento document. de JS tiene una serie de métodos que interactuan con la informacion de HTML, permitiendo agregar o modificar los existentes.
+
+(3*): Vemos equivalencias, es decir codigo en formato JQUERY y JS que hacen la misma accion. Se pone a modo de ejemplo, para que podamos ver la sintaxis de uno y otro pero que cumplen la misma funcion. Se explica de esta manera para resaltar en que la diferencia radica principalmente en la mejor compatibilidad y fluidez que se tiene usando codigo JS en vez de JQUEY ya que es la sintaxis que utilizan los navegadores en su estructura, metodo nativo.
+
+(4*): Recomienda una pagina: //caniuse.com (Can I use) , desde donde podemos meter metodos HTML/CSS/JS y nos indican las compatibilidades que este tiene con distintos navegadores.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. DOM y JavaScript</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!--Creamos la clase destacado debajo, este va dentro de un style porque la clase contiene atributos del tipo css, esa clase"destacado" contiene un color (amarillo). Que se llamara mas abajo para ser usada.
+-->
+
+	<style type="text/css" media="screen">
+
+		
+		.destacado 
+		{
+			color: #fc0;
+		}
+
+	</style>
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<h1 id="nombre">Nombre del detalle</h1>
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat".</p>
+
+					<blockquote> 
+
+
+						<p id="descripcion">Esto es una descripción.</p>
+						<footer>
+						<script> // (1*) INCLUSION DE DATOS MEDIANTE SCRIPT JS
+						
+							var fecha = new Date(); //Elemento de JS que guardamos en fecha
+							var dia = fecha.getDate();//Extraemos de todos los datos alojadoes en fecha, solo el dia y guardamos en dia.
+							var mes = fecha.getMonth()+1;//Extraemos de todos los datos alojadoes en fecha, solo el mes y guardamos en mes.
+							var anio = fecha.getFullYear();//Extraemos de todos los datos alojadoes en fecha, solo el año y guardamos en anio.
+
+							document.write(dia+'/'+mes+'/'+anio); //Metodo que escribe el dato en pagina, de los 3 objetos concatenados.
+
+						</script>
+						</footer>
+
+					</blockquote>
+				</div>
+			</div>	
+		</div>	
+
+		<script> // (2*) MODIFICACION EL CONTENIDO EXISTENTE MEDIANTE SCRIPT JS
+
+			var elemento;
+			var descripcion;
+
+			//MOD. DE LA DESCRIPCION
+
+			descripcion = document.getElementById('descripcion').innerHTML; 
+			//Busca el id descripcion, lo guarda en la variable descripcion a (Esto es una descripción.)
+
+
+			console.log(descripcion); 
+			//Muestra por consola lo que contiene (Esto es una descripción.)
+
+
+			descripcion += 'Modificada'; 
+			//Le suma 'Modificada'a lo contenido en descripcion = (Esto es una descripción.Modificada)
+
+			document.getElementById('descripcion').innetHTML =  descripcion;
+
+			//Busca nuevamente a descripcion ya modificada y se la establece como nueva asi, descripcion = Esto es una descripción.Modificada
+
+
+
+			//MOD. DEL TITULO (H1) color.
+
+			elemento = document.querySelector('h1');
+			elemento.className += 'destacado';
+			//Busca el contenido que tiene h1 en el documento (Nombre del detalle), lo guarda en elemento, y luego le aplica la propiedad definida en la clase de nombre "destacado", que es una definicion de color a amarillo.
+
+			//EXPLICACION DE SINTAXIS EN EJ: JQUERY Y JS
+
+			$('#descripcion') //JQuery
+			document.getElementById('descripcion') //JS
+
+			$('h1') //JQuery
+			document.getElementByTagName('h1') //JS
+
+			$('p.nombre-clase') //JQuery
+			document.getElementSelectorAll('p.nombre-clase') //JS
+
+			/*
+			document.getElementByClassName('nombre-clase');
+			document.getElementByTagName('etiqueta');
+			element.querySelector('p.nombre-clase'); //devuelve el primero, IE8+
+			element.querySelectorAll('p.nombre-clase'); //devuelve todos, IE8+
+
+			*/
+
+		</script>
+</body>
+</html>

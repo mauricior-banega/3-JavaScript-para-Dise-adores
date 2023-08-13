@@ -1,0 +1,53 @@
+<!--Comenzamos el 8vo Practico Javascript: operadorescomparacion.html
+
+Veremos como se aplican operacion de comparacion entre variables, dando como resultados logicos segun lo planteado en la consola.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JS para diseñadores. Operadores de comparación</title>
+
+	<!--BootStrap 3-->
+	<link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+				</div>
+			</div>	
+		</div>	
+
+		<script>
+
+
+			var a = 10;
+			var b = 2;
+			var c = 10;
+			
+			var cadena10 = '10';
+			var nombre_1 = "Marcos";
+			var nombre_2 = "Pedro";
+
+			console.log('Igualdad: '+ (a==b)); //false -Es igual a y b?, no entonces da falso.
+			console.log('Distinto: '+ (a!=b)); //true -Es distinto a y b?, si entonces da verdadero.
+			console.log('Igualdad absoluta: '+ (a===c)); //true -Es identico (mismo valor y tipo de variable) a y c?, si entonces da verdadero.
+
+			console.log('Igualdad absoluta: '+ (a===cadena10)); //false -Es identico (mismo valor y tipo de variable) a y c?, no, porque son igual en valor pero no asi el tipo de variable y da falso.
+
+			console.log('Mayor que: ' + (a > b)); //true
+			console.log('Mayor que: ' + (a < b)); //false
+			console.log('Mayor o igual: ' + (a >= c)); //true
+			
+			console.log('Y en cadenas: ' + (nombre_1 > nombre_2)); //false
+			//En esta operacion de mayor/menor toma la primera o 2da letra (en caso de ser la misma y demas pocisiones) del abecedario y la compara comparando su nº pocision en el, es decir M esta antes que P entonces, M es menor, entonces decimos que es falso ya que P es mas grande en el nº de pocision.
+
+		</script>
+</body>
+</html>

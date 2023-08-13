@@ -1,0 +1,46 @@
+<!-- Este HTML contiene informacion creada por mi, complementaria de lo aprendido
+en JS para diseñadores del curso.
+
+-Puntualmente aclarare para mi entendimiento instrucciones sobre distintos metodos usados en todos los practicos realizados donde no es tan facil entender porque llama a cada objeto. Por ello comentare segun cada caso aplicado el porque de la creacion de cada instruccion.
+
+Practicos enumerados:
+
+---------------------------------------------------------------------------------
+15vo Practico Javascript: estructuras-while.html
+
+---------------------------------------------------------------------------------
+<ul id="menu"class="list-inline"> 
+					<li>Primero</li>
+					<li>Segundo</li>
+					<li>Tercero</li>
+					<li class="seleccionado">Cuarto</li> el 4to elemento li
+					<li>Quinto</li>
+
+elementos= document.querySelectorAll('#menu>li');
+
+-Crea la variable elementos, desde donde extrae el contenido del array ul con id:menu mendiate el metodo document.querySelectorAll(). Pone #menu porque con #se llama a los id y el > es porque hace referencia a cargar los elementos li de ese ul id=menu.
+
+---------------------------------------------------------------------------------
+
+-Despues hace tambien:
+
+elementos[i].className.indexOf('seleccionado') >= 0) ,porque?
+
+Entonces busca un elemento que contenga una clase llamada (seleccionado) para hacer algo con ella, por eso pone elementos [i] (para ir de uno en uno mediante el i++), luego define className (porque busca una clase) e indexOf porque es la declaracion para la busqueda de clase especifica mediante el ('').
+
+
+---------------------------------------------------------------------------------
+14vo Practico Javascript: estructuras-if-else.html
+
+---------------------------------------------------------------------------------
+
+-Usa esta codificacion para extraer cada valor de un id dentro de un array
+
+var elemento = document.getElementById('menu').className;
+
+-Pone document.getElementById para extraer cada elemento de ese array (menu), y usa className porque esos elementos estan dentro de una clase.
+
+
+
+
+-->	
